@@ -1,0 +1,66 @@
+body {
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  background: #f5f9ff;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  background: #0056d2;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+}
+
+.logo {
+  height: 60px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 90%;
+  margin: 40px auto;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0056d2;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+.back-btn {
+  margin: 20px;
+  padding: 10px 20px;
+  background: #0056d2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background: #0041a6;
+}
