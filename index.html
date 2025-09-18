@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlas Academy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Atlas Academy Logo" class="logo">
+  </header>
+
+  <!-- الصفحة الرئيسية: اختيار المستويات -->
+  <section id="levels" class="grid">
+    <div class="card" onclick="showSubjects('1as')">1 ثانوي</div>
+    <div class="card" onclick="showSubjects('2as')">2 ثانوي</div>
+    <div class="card" onclick="showSubjects('bac')">بكالوريا</div>
+    <div class="card" onclick="showSubjects('bem')">BEM</div>
+  </section>
+
+  <!-- صفحة المواد -->
+  <section id="subjects" class="hidden">
+    <button class="back-btn" onclick="goBack()">⬅ رجوع</button>
+    <div class="grid">
+      <div class="card">رياضيات</div>
+      <div class="card">فيزياء</div>
+      <div class="card">علوم طبيعية</div>
+      <div class="card">لغة عربية</div>
+      <div class="card">لغة فرنسية</div>
+      <div class="card">لغة إنجليزية</div>
+      <div class="card">تاريخ وجغرافيا</div>
+      <div class="card">فلسفة</div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
