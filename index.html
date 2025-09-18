@@ -1,52 +1,81 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>أطلس أكاديمي</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Atlas Academy</title>
+
+  <!-- خطوط وأيقونات -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-  <!-- أيقونات FontAwesome -->
-  <script src="https://kit.fontawesome.com/4fdf6b6f2d.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- الشريط العلوي -->
-  <header>
-    <div class="top-bar">
-      <img src="logo.png" alt="شعار أطلس" class="logo">
-      <h1 class="site-name">أطلس أكاديمي</h1>
-      <div class="menu-dots">⋮</div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="brand-left">
+      <div class="logo-wrap">
+        <img src="logo.png" alt="Atlas Academy Logo" class="logo" />
+      </div>
+      <div class="brand-text">
+        <div class="brand-name">Atlas Academy</div>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <button class="menu-btn" id="menuBtn" aria-label="قائمة">
+        <i class="fas fa-ellipsis-v"></i>
+      </button>
+      <div class="menu-dropdown hidden" id="menuDropdown" aria-hidden="true">
+        <a href="#" id="loginBtn">تسجيل الدخول</a>
+        <a href="#" id="contactBtn">اتصل بنا</a>
+      </div>
     </div>
   </header>
 
-  <!-- الصفحة الرئيسية: المستويات -->
-  <section id="levels" class="grid">
-    <div class="card" onclick="showSubjects('1as')"><i class="fas fa-school"></i> أولى ثانوي</div>
-    <div class="card" onclick="showSubjects('2as')"><i class="fas fa-university"></i> ثانية ثانوي</div>
-    <div class="card" onclick="showSubjects('bac')"><i class="fas fa-graduation-cap"></i> بكالوريا</div>
-    <div class="card" onclick="showSubjects('bem')"><i class="fas fa-book"></i> BEM</div>
-  </section>
+  <!-- MAIN -->
+  <main class="main-area">
+    <section id="levelsView" class="levels-grid">
+      <div class="level-card" data-level="1as">
+        <div class="level-icon"><i class="fas fa-book-open"></i></div>
+        <div class="level-title">1 ثانوي</div>
+      </div>
 
-  <!-- صفحة المواد -->
-  <section id="subjects" class="hidden">
-    <button class="back-btn" onclick="goBack()">⬅ رجوع</button>
-    <div class="grid">
-      <div class="card"><i class="fas fa-calculator"></i> رياضيات</div>
-      <div class="card"><i class="fas fa-atom"></i> فيزياء</div>
-      <div class="card"><i class="fas fa-dna"></i> علوم طبيعية</div>
-      <div class="card"><i class="fas fa-book-open"></i> لغة عربية</div>
-      <div class="card"><i class="fas fa-flag"></i> لغة فرنسية</div>
-      <div class="card"><i class="fas fa-language"></i> لغة إنجليزية</div>
-      <div class="card"><i class="fas fa-moon"></i> تربية إسلامية</div>
-      <div class="card"><i class="fas fa-globe"></i> تاريخ وجغرافيا</div>
-      <div class="card"><i class="fas fa-lightbulb"></i> فلسفة</div>
-    </div>
-  </section>
+      <div class="level-card" data-level="2as">
+        <div class="level-icon"><i class="fas fa-book"></i></div>
+        <div class="level-title">2 ثانوي</div>
+      </div>
 
-  <!-- الشريط السفلي -->
-  <footer>
-    <a href="https://t.me/AtlasAcademyonline" target="_blank"><i class="fab fa-telegram"></i></a>
-    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <div class="level-card" data-level="bac">
+        <div class="level-icon"><i class="fas fa-user-graduate"></i></div>
+        <div class="level-title">بكالوريا</div>
+      </div>
+
+      <div class="level-card" data-level="bem">
+        <div class="level-icon"><i class="fas fa-certificate"></i></div>
+        <div class="level-title">BEM</div>
+      </div>
+    </section>
+
+    <!-- صفحة المواد -->
+    <section id="subjectsView" class="hidden subjects-wrap">
+      <div class="subjects-top">
+        <button class="back-btn" id="backBtn">⬅ رجوع</button>
+        <h2 class="subjects-heading" id="subjectsHeading">المواد</h2>
+      </div>
+      <div class="subjects-grid" id="subjectsGrid">
+        <!-- المواد تولد هنا ديناميكيًا -->
+      </div>
+    </section>
+  </main>
+
+  <!-- الشريط السفلي الجديد -->
+  <footer class="social-bar">
+    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://t.me/AtlasAcademyonline" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+    <a href="https://wa.me/0000000000" target="_blank"><i class="fab fa-whatsapp"></i></a>
   </footer>
 
   <script src="script.js"></script>
