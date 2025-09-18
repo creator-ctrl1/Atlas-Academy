@@ -1,54 +1,121 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>أطلس أكاديمي</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- أيقونات FontAwesome -->
-  <script src="https://kit.fontawesome.com/4fdf6b6f2d.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <!-- الشريط العلوي -->
-  <header>
-    <div class="top-bar">
-      <img src="logo.png" alt="شعار أطلس" class="logo">
-      <h1 class="site-name">أطلس أكاديمي</h1>
-      <div class="menu-dots">⋮</div>
-    </div>
-  </header>
+body {
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  background: #f5f9ff;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  <!-- الصفحة الرئيسية: المستويات -->
-  <section id="levels" class="grid">
-    <div class="card" onclick="showSubjects('1as')"><i class="fas fa-school"></i> أولى ثانوي</div>
-    <div class="card" onclick="showSubjects('2as')"><i class="fas fa-university"></i> ثانية ثانوي</div>
-    <div class="card" onclick="showSubjects('bac')"><i class="fas fa-graduation-cap"></i> بكالوريا</div>
-    <div class="card" onclick="showSubjects('bem')"><i class="fas fa-book"></i> BEM</div>
-  </section>
+/* الشريط العلوي */
+header {
+  background: #0056d2;
+  width: 100%;
+  padding: 10px 20px;
+}
 
-  <!-- صفحة المواد -->
-  <section id="subjects" class="hidden">
-    <button class="back-btn" onclick="goBack()">⬅ رجوع</button>
-    <div class="grid">
-      <div class="card"><i class="fas fa-calculator"></i> رياضيات</div>
-      <div class="card"><i class="fas fa-atom"></i> فيزياء</div>
-      <div class="card"><i class="fas fa-dna"></i> علوم طبيعية</div>
-      <div class="card"><i class="fas fa-book-open"></i> لغة عربية</div>
-      <div class="card"><i class="fas fa-flag"></i> لغة فرنسية</div>
-      <div class="card"><i class="fas fa-language"></i> لغة إنجليزية</div>
-      <div class="card"><i class="fas fa-moon"></i> تربية إسلامية</div>
-      <div class="card"><i class="fas fa-globe"></i> تاريخ وجغرافيا</div>
-      <div class="card"><i class="fas fa-lightbulb"></i> فلسفة</div>
-    </div>
-  </section>
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  <!-- الشريط السفلي -->
-  <footer>
-    <a href="https://t.me/AtlasAcademyonline" target="_blank"><i class="fab fa-telegram"></i></a>
-    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-  </footer>
+.logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+.site-name {
+  color: #dff1ff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+  font-family: "Amiri", serif;
+}
+
+.menu-dots {
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* الشبكة */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  width: 90%;
+  margin: 40px auto;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #0056d2;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card i {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #0056d2;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+.back-btn {
+  margin: 20px;
+  padding: 10px 20px;
+  background: #0056d2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background: #0041a6;
+}
+
+/* الشريط السفلي */
+footer {
+  background: #0056d2;
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: fixed;
+  bottom: 0;
+}
+
+footer a {
+  color: white;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  color: #dff1ff;
+  }
